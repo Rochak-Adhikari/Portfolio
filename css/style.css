@@ -481,29 +481,18 @@ html[data-theme="light"] .moon-icon,
   }
 }
 
-/* --- Mobile: single column, text first, image below --- */
+/* --- Mobile: single column, image hidden --- */
 @media (max-width: 768px) {
   .hero-container {
     grid-template-columns: 1fr;
   }
 
-  .hero-text {
-    order: 1;
-  }
-
   .hero-image {
-    order: 2;
-    justify-content: center;
-    margin-top: var(--space-2);
-  }
-
-  .hero-image img {
-    width: 200px;
-    height: 200px;
+    display: none;
   }
 }
 
-/* --- Small mobile: compact image, stacked buttons --- */
+/* --- Small mobile: stacked buttons --- */
 @media (max-width: 480px) {
   .hero-cta {
     flex-direction: column;
@@ -512,11 +501,6 @@ html[data-theme="light"] .moon-icon,
 
   .hero-cta .btn {
     width: 100%;
-  }
-
-  .hero-image img {
-    width: 180px;
-    height: 180px;
   }
 }
 
