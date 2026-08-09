@@ -365,12 +365,13 @@ html[data-theme="light"] .moon-icon,
 
 .hero-container {
   display: grid;
-  grid-template-columns: 58% 42%;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: var(--space-6);
   align-items: center;
 }
 
 .hero-text {
+  width: 100%;
   max-width: 680px;
 }
 
@@ -455,6 +456,7 @@ html[data-theme="light"] .moon-icon,
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .hero-image img {
@@ -986,8 +988,8 @@ footer p {
 /* Laptop / Medium Screens (769px - 1024px) */
 @media (max-width: 1024px) {
   .hero-container {
-    grid-template-columns: 55% 45%;
-    column-gap: var(--space-5);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-5);
   }
 
   .hero-image img {
