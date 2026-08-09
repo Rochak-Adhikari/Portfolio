@@ -366,23 +366,12 @@ html[data-theme="light"] .moon-icon,
 .hero-container {
   display: grid;
   grid-template-columns: 58% 42%;
-  grid-template-areas:
-    "header image"
-    "body image";
-  column-gap: var(--space-6);
-  row-gap: 0;
+  gap: var(--space-6);
   align-items: center;
 }
 
-.hero-header {
-  grid-area: header;
+.hero-text {
   max-width: 680px;
-}
-
-.hero-body {
-  grid-area: body;
-  max-width: 680px;
-  margin-top: var(--space-4);
 }
 
 .hero-greeting {
@@ -394,7 +383,7 @@ html[data-theme="light"] .moon-icon,
   margin-bottom: var(--space-2);
 }
 
-.hero-intro h1 {
+.hero-text h1 {
   font-size: clamp(2.2rem, 5vw + 1rem, 3.6rem);
   font-weight: var(--font-weight-bold);
   letter-spacing: -0.04em;
@@ -403,7 +392,7 @@ html[data-theme="light"] .moon-icon,
   word-break: break-word;
 }
 
-.hero-body h2 {
+.hero-text h2 {
   font-size: clamp(1.05rem, 2vw + 0.5rem, 1.35rem);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
@@ -463,7 +452,6 @@ html[data-theme="light"] .moon-icon,
 }
 
 .hero-image {
-  grid-area: image;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -471,7 +459,7 @@ html[data-theme="light"] .moon-icon,
 
 .hero-image img {
   width: 100%;
-  max-width: 360px;
+  max-width: 340px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--radius-lg);
@@ -1003,7 +991,7 @@ footer p {
   }
 
   .hero-image img {
-    max-width: 300px;
+    max-width: 290px;
   }
 }
 
@@ -1086,50 +1074,32 @@ footer p {
     background-color: var(--color-btn-secondary-hover-bg);
   }
 
-  /* Hero Mobile Layout: Top row (greeting + name on left, compact photo on right), Bottom row (title, bio, buttons) */
+  /* Hero Mobile Layout: Text first, buttons next, compact profile image underneath */
   .hero-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
   }
 
-  .hero-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-3);
+  .hero-text {
     width: 100%;
     max-width: 100%;
   }
 
-  .hero-intro {
-    flex: 1;
-    min-width: 0;
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: var(--space-2);
   }
 
-  .hero-intro h1 {
-    font-size: clamp(1.65rem, 5vw + 0.5rem, 2.2rem);
-  }
-
-  .hero-header .hero-image {
-    grid-area: auto;
-    flex-shrink: 0;
-    margin-top: 0;
-  }
-
-  .hero-header .hero-image img {
-    width: 110px;
-    height: 110px;
-    max-width: 110px;
+  .hero-image img {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: var(--radius-lg);
-  }
-
-  .hero-body {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 0;
   }
 
   /* Projects & Skills 1-Column Layout */
@@ -1173,6 +1143,12 @@ footer p {
     width: 100%;
   }
 
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+    max-width: 180px;
+  }
+
   .education-header {
     flex-direction: column;
     align-items: flex-start;
@@ -1185,23 +1161,6 @@ footer p {
   .modal-container {
     padding: var(--space-4);
     border-radius: var(--radius-md);
-  }
-}
-
-/* Very Narrow Mobile Devices (<= 360px) */
-@media (max-width: 360px) {
-  .hero-header {
-    gap: var(--space-2);
-  }
-
-  .hero-intro h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-header .hero-image img {
-    width: 95px;
-    height: 95px;
-    max-width: 95px;
   }
 }
 
